@@ -25,7 +25,7 @@
                 <ul class="navbar__menu">
                     <li><a href="#">Strona Główna</a></li>
                     <li><a href="#">Menu</a></li>
-                    <li><a href="#">O nas</a></li>
+                    <li><a href="#about-us">O nas</a></li>
                     <li><a href="#">Kontakt</a></li>
                 </ul>
             </div>
@@ -34,10 +34,10 @@
         <p class="parallax-title">Najlepsza kawa w sercu miasta</p>
         <button class="btn header-btn parallax-title">menu</button>
         <div class="bg-shadow"></div>
-        <a href="#" class="arrow"><i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#about-us" class="arrow"><i class="fa-solid fa-arrow-down"></i></a>
     </header>
     <main>
-        <section class="about-us">
+        <section class="about-us" id="about-us">
             <div class="honey">
                 <img class="" src="./dist/img/honey vector.svg" alt="">
                 <h2 class="section-title">KIM JESTEŚMY?</h2>
@@ -98,18 +98,50 @@
             </div>
         </section>
         <div class="hero-img">
-            <div class="blur"></div>
             <h2>odkryj nasze smaki</h2>
             <a href="#"><button class="btn header-btn">menu</button></a>
+            <div class="blur"></div>
         </div>
         </div>
+        <section class="reviews-section">
+            <div class="stars">
+                <img src="./dist/img/star-svgrepo-com.svg" alt="" class="star">
+                <img src="./dist/img/star-svgrepo-com.svg" alt="" class="star">
+                <img src="./dist/img/star-svgrepo-com.svg" alt="" class="star">
+                <img src="./dist/img/star-svgrepo-com.svg" alt="" class="star">
+                <img src="./dist/img/star-svgrepo-com.svg" alt="" class="star">
+            </div>
+            <h2>Nie wierz nam na słowo Zaufaj <br>naszym gościom! </h2>
+            <div class="reviews-container">
+                <div class="review">
+
+                    <div class="review-text">
+                        <button class="left-btn review-btn"><span>
+                                < </span></button>
+                    <div class="review-texts-container">Klimat tej kawiarni jest niepowtarzalny. Kawa smakuje wyjątkowo,
+                        a domowe wypieki sprawiają, że chce się tu wracać. Idealne miejsce na chwilę relaksu!</div>
+                    <button class="right-btn review-btn"><span>></span></button>
+                    </div>
+                    <div class="autor">
+                        <p class="name">Anna Kowalska</p>
+                        <p class="func">Lojalna klientka Brevio</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="linear-gradient"></section>
     </main>
-
-
+    <footer>
+        <h2>Brevio</h2>
+        <hr>
+        <p>&copy; <span class="current-year"></span> Copyright</p>
+    </footer>
 
 
 
     <script src="./dist/js/main.min.js"></script>
+    <script src="./dist/js/slider.min.js"></script>
 </body>
 
 </html>

@@ -19,12 +19,12 @@ body {
 	background-color: $bg-color;
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
-	height: 500vh;
+	
 }
 .btn {
 	background-color: $accent;
 	color: #fff;
-	
+
 	text-transform: uppercase;
 	padding: clamp(7px, 1.6vw, 10px) clamp(14px, 4vw, 30px);
 	font-size: clamp(14px, 1.4vw, 20px);
@@ -50,7 +50,7 @@ header {
 	flex-direction: column;
 	position: relative;
 	z-index: 10;
-	.btn{
+	.btn {
 		transform: translateY(-20px);
 	}
 	.navbar {
@@ -148,7 +148,7 @@ header {
 				left: 0;
 				opacity: 0;
 				width: 100%;
-				background: rgba(255, 204, 128, 0.95);
+				background: linear-gradient(90deg, rgba(255, 204, 128, 0.9), rgba(255, 168, 77, 0.9));
 				flex-direction: column;
 				align-items: center;
 				transition: opacity 0.3s;
@@ -225,7 +225,6 @@ header {
 		font-weight: 300;
 		transform: translateY(-20px);
 	}
-	
 }
 main {
 	.about-us {
@@ -300,7 +299,7 @@ main {
 		background-position: center;
 		background-repeat: no-repeat;
 		position: relative;
-		z-index: -2;
+		z-index: 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -311,15 +310,166 @@ main {
 			left: 0;
 			height: 100%;
 			width: 100%;
-			background-color: rgba($color: #fff, $alpha: 0);
+			background-color: rgba($color: #000, $alpha: 0.1);
 			backdrop-filter: blur(3px);
-			z-index: -1;
+			z-index: -2;
+		}
+		a {
+			z-index: 2;
 		}
 		h2 {
 			color: #fff;
-			font-size: 7vw;
+			font-size: 6vw;
 			font-weight: normal;
 		}
-		
+	}
+	.reviews-section {
+		padding: 1em;
+		.stars {
+			text-align: center;
+			padding-top: clamp(10px, 4vh, 52px);
+			.star {
+				width: clamp(30px, 6vw, 70px);
+				padding: clamp(0.2em, 1vw, 0.4em);
+				height: 50px;
+			}
+		}
+		h2 {
+			text-align: center;
+			font-size: clamp(1.5rem, 3vw, 5rem);
+			color: $accent;
+		}
+		.review {
+			display: flex;
+			padding-top: clamp(10px, 4vh, 52px);
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			gap: 2em;
+			.review-text {
+				position: relative;
+				text-align: center;
+				.review-texts-container {
+					font-size: clamp(1rem, 3vw, 2rem);
+					font-weight: 400;
+					transition: opacity 0.3s;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: clamp(80px, 30vh, 100px);
+				}
+				width: 83%;
+				padding: clamp(2em, 2vh, 6em) 2em;
+				max-width: 900px;
+				color: $main;
+			}
+			.autor {
+				text-align: center;
+				.name {
+					font-size: clamp(1rem, 2vw, 1.3rem);
+					font-weight: 550;
+					color: $main;
+				}
+				.func {
+					font-size: clamp(1rem, 2vw, 1.2rem);
+					font-weight: 350;
+					color: $main;
+				}
+			}
+			.review-btn {
+				position: absolute;
+				border: none;
+				background: none;
+				cursor: pointer;
+				font-size: clamp(3.3rem, 6vw, 9rem);
+				padding: 0.5em;
+				color: $accent;
+				transition: scale 0.3s;
+				&:hover {
+					scale: 1.1;
+				}
+				span {
+					font-weight: 300;
+				}
+			}
+			.left-btn {
+				left: -13%;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.right-btn {
+				right: -11%;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+	.linear-gradient {
+		width: 100%;
+		height: clamp(100px, 35vh, 200px);
+		background: linear-gradient($bg-color, $main);
+	}
+}
+footer{
+	background-color: $main;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	h2{
+		font-size: 2rem;
+		padding: clamp(1em,5vw,2.5em);
+		font-weight: 600;
+		align-self: flex-start;
+	}
+	hr{
+		width: 100%;
+		border: none;
+		height: clamp(1px,.1vh,3px);
+		background: linear-gradient(to right, transparent, rgba($bg-color, 0.5), transparent);
+	}
+	p{
+		font-size: 1.2rem;
+		padding: 1em;
+	}
+}
+@media (min-width: 1600px) {
+	main {
+		.reviews-section {
+			.stars {
+				padding-top: clamp(10px, 89vh, 100px);
+				.star {
+					width: clamp(30px, 6vw, 70px);
+					padding: clamp(0.2em, 1vw, 0.4em);
+				}
+			}
+			h2 {
+				font-size: clamp(1.5rem, 3vw, 6rem);
+			}
+			.review {
+				gap: 3em;
+				.review-text {
+					.review-texts-container {
+						font-size: clamp(1rem, 3vw, 2.3rem);
+						font-weight: 400;
+					}
+
+					width: 83%;
+
+					padding: 5em 2em;
+				}
+
+				.review-btn {
+					font-size: clamp(3.3rem, 6vw, 9rem);
+				}
+				.left-btn {
+					left: -20%;
+				}
+				.right-btn {
+					right: -20%;
+				}
+			}
+		}
 	}
 }
