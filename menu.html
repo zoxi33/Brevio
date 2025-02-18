@@ -35,10 +35,127 @@
 
 
         <div class="bg-shadow"></div>
-        <a href="#about-us" class="arrow"><i class="fa-solid fa-arrow-down"></i></a>
         <img class="honey-menu" src="./dist/img/honey vector.svg" alt="">
     </header>
-    <section class="search-section"></section>
+    <section class="search-section">
+        <div class="wrapper">
+            <div class="search-container">
+                <div class="top-bar">
+                    <input type="text" placeholder="Wyszukaj produkt..." class="search-input">
+    
+                    <div class="sort-container">
+                        <select class="filter">
+                            <option value="" selected disabled>- filtruj -</option>
+                            <option value="napoje">Napoje</option>
+                            <option value="jedzenie">Jedzenie</option>
+                            <option value="kawa">Kawa</option>
+                        </select>
+                        <select class="sort">
+                            <option value="" selected disabled>- sortuj -</option>
+                            <option value="asc">Cena rosnąco</option>
+                            <option value="desc">Cena malejąco</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="main-content">
+                    <p class="no-results" style="display: none; text-align: center; font-size: 1.2rem; color: red;">
+                        Brak wyników wyszukiwania.
+                    </p>
+                    <div class="product" data-name="sałatka" data-composition="sałata,ogórek,pomidor,kurczak" data-category="jedzenie">
+                        <div class="top"><img src="./dist/img/salad-1264107_640.jpg" alt=""></div>
+                        <div class="bottom">
+                            <h3>Sałatka</h3>
+                            <p class="composition">Sałata, Ogórek, Pomidor, Kurczak</p>
+                            <p class="price">21.37 zł</p>
+                        </div>
+                    </div>
+    
+                    <div class="product" data-name="americano" data-composition="kawa" data-category="kawa">
+                        <div class="top"><img src="./dist/img/coffee-2431159_640.jpg" alt=""></div>
+                        <div class="bottom">
+                            <h3>Americano</h3>
+                            <p class="composition">Kawa</p>
+                            <p class="price">8.00 zł</p>
+                        </div>
+                    </div>
+    
+                    <div class="product" data-name="kawa czarna" data-composition="kawa" data-category="kawa">
+                        <div class="top"><img src="./dist/img/coffee-563797_640.jpg" alt=""></div>
+                        <div class="bottom">
+                            <h3>Kawa Czarna</h3>
+                            <p class="composition">Kawa</p>
+                            <p class="price">6.00 zł</p>
+                        </div>
+                    </div>
+    
+                    <div class="product" data-name="sernik na zimno" data-composition="jajka,wanilia,mleko,mąka" data-category="jedzenie">
+                        <div class="top"><img src="./dist/img/cake-906263_640.jpg" alt=""></div>
+                        <div class="bottom">
+                            <h3>Sernik na Zimno</h3>
+                            <p class="composition">Jajka, Wanilia, Mleko, Mąka</p>
+                            <p class="price">15.00 zł</p>
+                        </div>
+                    </div>
+    
+                    <div class="product" data-name="babka z czekoladą" data-composition="czekolada" data-category="jedzenie">
+                        <div class="top"><img src="./dist/img/candies-5653251_640.jpg" alt=""></div>
+                        <div class="bottom">
+                            <h3>Babka z Czekoladą</h3>
+                            <p class="composition">Czekolada</p>
+                            <p class="price">10.50 zł</p>
+                        </div>
+                    </div>
+    
+                    <div class="product" data-name="rogalik z czekoladą" data-composition="rogalik,czekolada" data-category="jedzenie">
+                        <div class="top"><img src="./dist/img/croissant-3836578_640.jpg" alt=""></div>
+                        <div class="bottom">
+                            <h3>Rogalik z Czekoladą</h3>
+                            <p class="composition">Rogalik, Czekolada</p>
+                            <p class="price">6.20 zł</p>
+                        </div>
+                    </div>
+    
+                    <div class="product" data-name="czekoladki" data-composition="czekoladki" data-category="jedzenie">
+                        <div class="top"><img src="./dist/img/chocolate-4061921_640.jpg" alt=""></div>
+                        <div class="bottom">
+                            <h3>Czekoladki</h3>
+                            <p class="composition">Czekoladki</p>
+                            <p class="price">18.49 zł</p>
+                        </div>
+                    </div>
+    
+                    <div class="product" data-name="naleśnik z czekoladą" data-composition="czekolada,naleśnik" data-category="jedzenie">
+                        <div class="top"><img src="./dist/img/crepe-6003448_640.jpg" alt=""></div>
+                        <div class="bottom">
+                            <h3>Naleśnik z Czekoladą</h3>
+                            <p class="composition">Czekolada, Naleśnik</p>
+                            <p class="price">29.99 zł</p>
+                        </div>
+                    </div>
+    
+                    <div class="product" data-name="coca cola" data-composition="coca cola" data-category="napoje">
+                        <div class="top"><img src="./dist/img/can-87995_640.jpg" alt=""></div>
+                        <div class="bottom">
+                            <h3>Coca Cola</h3>
+                            <p class="composition">Coca Cola</p>
+                            <p class="price">4.99 zł</p>
+                        </div>
+                    </div>
+    
+                    <div class="product" data-name="woda z cytryną" data-composition="woda,cytryna" data-category="napoje">
+                        <div class="top"><img src="./dist/img/lemon-6699568_640.jpg" alt=""></div>
+                        <div class="bottom">
+                            <h3>Woda z Cytryną</h3>
+                            <p class="composition">Woda, Cytryna</p>
+                            <p class="price">3.99 zł</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
 
     <footer>
@@ -50,6 +167,7 @@
 
     <script src="./dist/js/main.min.js"></script>
     <script src="./dist/js/slider.min.js"></script>
+    <script src="./dist/js/search.min.js"></script>
 </body>
 
 </html>
