@@ -57,6 +57,7 @@ header {
                 align-items: center;
                 flex-wrap: wrap;
                 gap: 10px;
+                min-height: 400px; // Ustalona minimalna wysokość, np. 400px (dostosuj według potrzeb)
 				.product {
 					border-radius: 20px;
 					overflow: hidden;
@@ -237,4 +238,9 @@ header {
 			}
 		}
 	}
+}
+@media (max-width: 768px) {
+    .main-content {
+        min-height: 300px;
+    }
 }
