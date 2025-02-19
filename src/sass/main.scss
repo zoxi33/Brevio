@@ -19,7 +19,6 @@ body {
 	background-color: $bg-color;
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
-	
 }
 .btn {
 	background-color: #7a665c;
@@ -50,6 +49,9 @@ header {
 	flex-direction: column;
 	position: relative;
 	z-index: 10;
+	.contact-paralax {
+		font-size: clamp(4rem, 10vw, 8rem);
+	}
 	.btn {
 		transform: translateY(-20px);
 	}
@@ -409,30 +411,260 @@ main {
 		height: clamp(100px, 35vh, 200px);
 		background: linear-gradient($bg-color, $main);
 	}
+	.contact-section {
+		background-color: $bg-color;
+		text-align: center;
+		.section-heading {
+			padding-top: clamp(1em, 5vh, 1.5em);
+			font-size: clamp(2rem, 6vw, 4rem);
+			font-weight: 450;
+		}
+		.contact-container {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			
+			padding: 1em;
+
+			.wrapper {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				gap: 1em;
+				.left-box {
+					color: $bg-color;
+					background-color: $main;
+					width: clamp(250px, 70vw, 800px);
+					
+					border-radius: 20px;
+
+					form {
+						padding: 1em;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+						font-size: 2rem;
+						label {
+							align-self: first baseline;
+							padding-left: 0.3em;
+							padding-top: 0.5em;
+						}
+						input,
+						textarea {
+							border: 1px solid $bg-color;
+							background-color: $gold;
+							border-radius: 20px;
+							padding: 0.6em;
+							width: 100%;
+						}
+						label {
+							&:first-child {
+								padding-top: 0;
+							}
+						}
+						textarea {
+							max-width: 100%;
+							min-width: 100%;
+
+							min-height: 155px;
+							max-height: 250px;
+						}
+						.contact-button {
+							padding: 0.5em 0.5em;
+							border-radius: 12px;
+							background-color: $bg-color;
+							border: none;
+							text-transform: uppercase;
+							cursor: pointer;
+							margin-top: 0.5em;
+							transition: padding .3s;
+							align-self: flex-end;
+						}
+						.contact-button:hover{
+							padding: .60em;
+						}
+					}
+				}
+				.right-box {
+					background-color: $gold;
+					width: clamp(250px, 70vw, 800px);
+					height: clamp(300px, 50vh, 600px);
+					
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+					flex-direction: column;
+					font-size: 2rem;
+					border-radius: 20px;
+					.box-container{
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+						gap: 8px;
+						transition: scale .3s;
+						padding: 1em;
+						i{
+							font-size: 3rem;
+
+						}
+						p{
+							font-size: 1.5rem;
+						}
+						
+					}
+					.box-container:hover{
+						scale: .95;
+					}
+				}
+			}
+		}
+	}
 }
-footer{
+footer {
 	background-color: $main;
 	color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	h2{
+	h2 {
 		font-size: 2rem;
-		padding: clamp(1em,5vw,2.5em);
+		padding: clamp(1em, 5vw, 2.5em);
 		font-weight: 600;
 		align-self: flex-start;
 	}
-	hr{
+	hr {
 		width: 100%;
 		border: none;
-		height: clamp(1px,.1vh,3px);
+		height: clamp(1px, 0.1vh, 3px);
 		background: linear-gradient(to right, transparent, rgba($bg-color, 0.5), transparent);
 	}
-	p{
+	p {
 		font-size: 1.2rem;
 		padding: 1em;
 	}
+}
+@media (min-width:768px) {
+	main{
+
+		.contact-section {
+			background-color: $bg-color;
+			text-align: center;
+
+			.section-heading {
+				padding-top: clamp(1em, 5vh, 1.5em);
+				font-size: clamp(2rem, 6vw, 4rem);
+				font-weight: 450;
+			}
+			.contact-container {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 10em;
+				padding: 1em;
+				
+				.wrapper {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: row;
+					gap: 1em;
+					.left-box {
+						color: $bg-color;
+					background-color: $main;
+					width: clamp(150px, 40vw, 550px);
+					
+					border-radius: 20px;
+					
+					form {
+						padding: 1em;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+						font-size: 2rem;
+						label {
+							align-self: first baseline;
+							padding-left: 0.3em;
+							padding-top: 0.5em;
+						}
+						input,
+						textarea {
+							border: 1px solid $bg-color;
+							background-color: $gold;
+							border-radius: 20px;
+							padding: 0.6em;
+							width: 100%;
+						}
+						label {
+							&:first-child {
+								padding-top: 0;
+							}
+						}
+						textarea {
+							max-width: 100%;
+							min-width: 100%;
+							
+							min-height: 250px;
+							max-height: 250px;
+						}
+						.contact-button {
+							padding: 0.5em 0.5em;
+							border-radius: 12px;
+							background-color: $bg-color;
+							border: none;
+							text-transform: uppercase;
+							cursor: pointer;
+							margin-top: 0.5em;
+							transition: padding .3s;
+							align-self: flex-end;
+						}
+						.contact-button:hover{
+							padding: .60em;
+						}
+					}
+				}
+				.right-box {
+					background-color: $gold;
+					width: clamp(150px, 40vw, 550px);
+					height: clamp(300px, 50vh, 600px);
+					
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+					flex-direction: column;
+					font-size: 2rem;
+					border-radius: 20px;
+					.box-container{
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+						gap: 8px;
+						transition: scale .3s;
+						padding: 1em;
+						i{
+							font-size: 3rem;
+							
+						}
+						p{
+							font-size: 1.5rem;
+						}
+						
+					}
+					.box-container:hover{
+						scale: .95;
+					}
+				}
+			}
+		}
+	}
+}
 }
 @media (min-width: 1600px) {
 	main {
