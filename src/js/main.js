@@ -3,6 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	const navbar = document.querySelector('.navbar')
 	const currentYear = document.querySelector('.current-year')
 	const title = document.querySelectorAll('.parallax-title')
+	const navLinks = document.querySelectorAll('.nav_link')
+	console.log(navLinks)
+	navLinks.forEach(link => {
+		link.addEventListener('click', () => {
+			navbar.classList.toggle('open')
+			navbar.classList.toggle('border')
+		})
+	})
 	const date = new Date().getFullYear()
 	currentYear.textContent = date
 	toggleButton.addEventListener('click', () => {
@@ -10,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		navbar.classList.toggle('border')
 	})
 	window.addEventListener('scroll', function () {
-		let scrollY1 = window.scrollY - 80
+		let scrollY1 = window.scrollY
 		title.forEach(title => {
 			title.style.transform = `translateY(${scrollY1 * 0.3}px)` // Im wyższa wartość, tym mocniejszy efekt
 		})

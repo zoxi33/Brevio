@@ -1,0 +1,681 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+body {
+  background-color: #E6D5C7;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+.btn {
+  background-color: #7a665c;
+  color: #fff;
+  text-transform: uppercase;
+  padding: clamp(7px, 1.6vw, 10px) clamp(14px, 4vw, 30px);
+  font-size: clamp(14px, 1.4vw, 20px);
+  border: none;
+  border-radius: 99px;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+}
+.btn:hover {
+  box-shadow: 0 0 25px rgba(217, 160, 102, 0.3);
+}
+
+header {
+  background-image: url("../../dist/img/maria-orlova-oMTlhdFUhdI-unsplash.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+header .contact-paralax {
+  font-size: clamp(4rem, 10vw, 8rem);
+}
+header .navbar {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, rgba(255, 204, 128, 0.9), rgba(255, 168, 77, 0.9));
+  border-radius: 50px;
+  width: clamp(500px, 60vw, 1000px);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  z-index: 1000;
+  transition: border-bottom-right-radius 0.3s, border-bottom-left-radius 0.3s;
+}
+header .navbar .white-element {
+  position: absolute;
+  height: 100%;
+  background-color: #fff;
+  left: 0;
+  width: 75px;
+  visibility: visible;
+  transition: width 0.3s, transform 0.3s;
+  transform-origin: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 80px;
+  border-top-left-radius: 50px;
+}
+header .navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+}
+header .navbar__logo {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 600;
+  color: #454545;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transform: translateX(15px);
+}
+header .navbar__menu {
+  list-style: none;
+  display: flex;
+  color: #454545;
+  transition: top 2s;
+}
+header .navbar__menu li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+header .navbar__menu li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.3vw, 1.8rem);
+  font-weight: 500;
+  color: #3d2b1f;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  height: 100%;
+  transition: color 0.3s;
+}
+header .navbar__menu li a:hover {
+  color: white;
+}
+header .navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #3d2b1f;
+  transform: translateX(-15px);
+}
+@media (max-width: 768px) {
+  header .navbar {
+    width: 80%;
+  }
+  header .navbar__menu {
+    position: absolute;
+    top: -350px;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255, 204, 128, 0.9), rgba(255, 168, 77, 0.9));
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.3s;
+    z-index: -1;
+  }
+  header .navbar__menu li {
+    width: 100%;
+  }
+  header .navbar__menu li a {
+    width: 100%;
+    text-align: center;
+  }
+  header .navbar__toggle {
+    display: block;
+  }
+  header .navbar__container {
+    padding: 1em 2em;
+  }
+  header .navbar.open .navbar__menu {
+    display: flex;
+    top: 100%;
+    opacity: 1;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  header .border {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  header .border .white-element {
+    width: 0;
+    transform: scale(0);
+  }
+}
+header .arrow {
+  position: absolute;
+  bottom: 0;
+  padding: 1em;
+  font-size: clamp(20px, 3vw, 32px);
+  cursor: pointer;
+  transition: transform 0.5s, color 0.3s;
+}
+header .arrow:hover {
+  transform: translateY(-10px);
+  color: #D9A066;
+}
+header .bg-shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+header h1 {
+  font-size: clamp(3rem, 6.7vw, 9.2rem);
+  font-weight: 500;
+  text-shadow: 0 5px 100px #D9A066;
+  transform: translateY(-20px);
+}
+header h1 .gradient {
+  background: linear-gradient(210deg, #D9A066, wheat);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+header p {
+  font-size: clamp(1.4rem, 2.5vw, 4rem);
+  font-weight: 300;
+  transform: translateY(-20px);
+}
+
+main .about-us .honey {
+  z-index: -10;
+  position: relative;
+}
+main .about-us .honey img {
+  width: 100%;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.25));
+}
+main .about-us .honey .section-title {
+  color: #4A3F35;
+  position: absolute;
+  z-index: auto;
+  top: clamp(15px, 3vw, 110px);
+  font-weight: 500;
+  left: 50%;
+  font-size: clamp(15px, 3vw, 3rem);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+main .about-us .about-us-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 80px;
+  z-index: -1;
+}
+main .about-us .about-us-content .about-us-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+}
+main .about-us .about-us-content .about-us-container .text {
+  height: clamp(110px, 30vw, 380px);
+  width: clamp(130px, 35vw, 500px);
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  color: #4A3F35;
+}
+main .about-us .about-us-content .about-us-container .text h3 {
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: clamp(1.2rem, 2vw, 2.5rem);
+}
+main .about-us .about-us-content .about-us-container .text p {
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
+}
+main .about-us .about-us-content .about-us-container .img img {
+  height: clamp(110px, 30vw, 380px);
+  width: clamp(130px, 35vw, 500px);
+}
+main .hero-img {
+  width: 100%;
+  height: clamp(150px, 50vh, 550px);
+  background-image: url(../../dist/img/coffee-beans-7126154_1280.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .hero-img .blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  z-index: -2;
+}
+main .hero-img a {
+  z-index: 2;
+}
+main .hero-img h2 {
+  color: #fff;
+  font-size: 6vw;
+  font-weight: normal;
+}
+main .reviews-section {
+  padding: 1em;
+}
+main .reviews-section .stars {
+  text-align: center;
+  padding-top: clamp(10px, 4vh, 52px);
+}
+main .reviews-section .stars .star {
+  width: clamp(30px, 6vw, 70px);
+  padding: clamp(0.2em, 1vw, 0.4em);
+  height: 50px;
+}
+main .reviews-section h2 {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 5rem);
+  color: #8C756A;
+}
+main .reviews-section .review {
+  display: flex;
+  padding-top: clamp(10px, 4vh, 52px);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+}
+main .reviews-section .review .review-text {
+  position: relative;
+  text-align: center;
+  width: 83%;
+  padding: clamp(2em, 2vh, 6em) 2em;
+  max-width: 900px;
+  color: #4A3F35;
+}
+main .reviews-section .review .review-text .review-texts-container {
+  font-size: clamp(1rem, 3vw, 2rem);
+  font-weight: 400;
+  transition: opacity 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: clamp(80px, 30vh, 100px);
+}
+main .reviews-section .review .autor {
+  text-align: center;
+}
+main .reviews-section .review .autor .name {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 550;
+  color: #4A3F35;
+}
+main .reviews-section .review .autor .func {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 350;
+  color: #4A3F35;
+}
+main .reviews-section .review .review-btn {
+  position: absolute;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: clamp(3.3rem, 6vw, 9rem);
+  padding: 0.5em;
+  color: #8C756A;
+  transition: scale 0.3s;
+}
+main .reviews-section .review .review-btn:hover {
+  scale: 1.1;
+}
+main .reviews-section .review .review-btn span {
+  font-weight: 300;
+}
+main .reviews-section .review .left-btn {
+  left: -13%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+main .reviews-section .review .right-btn {
+  right: -11%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+main .linear-gradient {
+  width: 100%;
+  height: clamp(100px, 35vh, 200px);
+  background: linear-gradient(#E6D5C7, #4A3F35);
+}
+main .contact-section {
+  background-color: #E6D5C7;
+  text-align: center;
+}
+main .contact-section .section-heading {
+  padding-top: clamp(1em, 5vh, 1.5em);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 450;
+}
+main .contact-section .contact-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+main .contact-section .contact-container .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
+main .contact-section .contact-container .wrapper .left-box {
+  color: #E6D5C7;
+  background-color: #4A3F35;
+  width: clamp(250px, 70vw, 800px);
+  border-radius: 20px;
+}
+main .contact-section .contact-container .wrapper .left-box form {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+}
+main .contact-section .contact-container .wrapper .left-box form label {
+  align-self: first baseline;
+  padding-left: 0.3em;
+  padding-top: 0.5em;
+}
+main .contact-section .contact-container .wrapper .left-box form input,
+main .contact-section .contact-container .wrapper .left-box form textarea {
+  border: 1px solid #E6D5C7;
+  background-color: #D9A066;
+  border-radius: 20px;
+  padding: 0.6em;
+  width: 100%;
+}
+main .contact-section .contact-container .wrapper .left-box form label:first-child {
+  padding-top: 0;
+}
+main .contact-section .contact-container .wrapper .left-box form textarea {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 155px;
+  max-height: 250px;
+}
+main .contact-section .contact-container .wrapper .left-box form .contact-button {
+  padding: 0.5em 0.5em;
+  border-radius: 12px;
+  background-color: #E6D5C7;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 0.5em;
+  transition: padding 0.3s;
+  align-self: flex-end;
+}
+main .contact-section .contact-container .wrapper .left-box form .contact-button:hover {
+  padding: 0.6em;
+}
+main .contact-section .contact-container .wrapper .right-box {
+  background-color: #D9A066;
+  width: clamp(250px, 70vw, 800px);
+  height: clamp(300px, 50vh, 600px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+  border-radius: 20px;
+}
+main .contact-section .contact-container .wrapper .right-box .box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  transition: scale 0.3s;
+  padding: 1em;
+}
+main .contact-section .contact-container .wrapper .right-box .box-container i {
+  font-size: 3rem;
+}
+main .contact-section .contact-container .wrapper .right-box .box-container p {
+  font-size: 1.5rem;
+}
+main .contact-section .contact-container .wrapper .right-box .box-container .hidden {
+  opacity: 0;
+}
+main .contact-section .contact-container .wrapper .right-box .box-container:hover {
+  scale: 0.95;
+}
+
+footer {
+  background-color: #4A3F35;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer h2 {
+  font-size: 2rem;
+  padding: clamp(1em, 5vw, 2.5em);
+  font-weight: 600;
+  align-self: flex-start;
+}
+footer hr {
+  width: 100%;
+  border: none;
+  height: clamp(1px, 0.1vh, 3px);
+  background: linear-gradient(to right, transparent, rgba(230, 213, 199, 0.5), transparent);
+}
+footer p {
+  font-size: 1.2rem;
+  padding: 1em;
+}
+
+@media (min-width: 768px) {
+  main .contact-section {
+    background-color: #E6D5C7;
+    text-align: center;
+  }
+  main .contact-section .section-heading {
+    padding-top: clamp(1em, 5vh, 1.5em);
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 450;
+  }
+  main .contact-section .contact-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10em;
+    padding: 1em;
+  }
+  main .contact-section .contact-container .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1em;
+  }
+  main .contact-section .contact-container .wrapper .left-box {
+    color: #E6D5C7;
+    background-color: #4A3F35;
+    width: clamp(150px, 40vw, 550px);
+    border-radius: 20px;
+  }
+  main .contact-section .contact-container .wrapper .left-box form {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+  }
+  main .contact-section .contact-container .wrapper .left-box form label {
+    align-self: first baseline;
+    padding-left: 0.3em;
+    padding-top: 0.5em;
+  }
+  main .contact-section .contact-container .wrapper .left-box form input,
+  main .contact-section .contact-container .wrapper .left-box form textarea {
+    border: 1px solid #E6D5C7;
+    background-color: #D9A066;
+    border-radius: 20px;
+    padding: 0.6em;
+    width: 100%;
+  }
+  main .contact-section .contact-container .wrapper .left-box form label:first-child {
+    padding-top: 0;
+  }
+  main .contact-section .contact-container .wrapper .left-box form textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 250px;
+    max-height: 250px;
+  }
+  main .contact-section .contact-container .wrapper .left-box form .contact-button {
+    padding: 0.5em 0.5em;
+    border-radius: 12px;
+    background-color: #E6D5C7;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 0.5em;
+    transition: padding 0.3s;
+    align-self: flex-end;
+  }
+  main .contact-section .contact-container .wrapper .left-box form .contact-button:hover {
+    padding: 0.6em;
+  }
+  main .contact-section .contact-container .wrapper .right-box {
+    background-color: #D9A066;
+    width: clamp(150px, 40vw, 550px);
+    height: clamp(300px, 50vh, 600px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    border-radius: 20px;
+  }
+  main .contact-section .contact-container .wrapper .right-box .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    transition: scale 0.3s;
+    padding: 1em;
+  }
+  main .contact-section .contact-container .wrapper .right-box .box-container i {
+    font-size: 3rem;
+  }
+  main .contact-section .contact-container .wrapper .right-box .box-container p {
+    font-size: 1.5rem;
+  }
+  main .contact-section .contact-container .wrapper .right-box .box-container:hover {
+    scale: 0.95;
+  }
+}
+@media (min-width: 1600px) {
+  main .reviews-section .stars {
+    padding-top: clamp(10px, 89vh, 100px);
+  }
+  main .reviews-section .stars .star {
+    width: clamp(30px, 6vw, 70px);
+    padding: clamp(0.2em, 1vw, 0.4em);
+  }
+  main .reviews-section h2 {
+    font-size: clamp(1.5rem, 3vw, 6rem);
+  }
+  main .reviews-section .review {
+    gap: 3em;
+  }
+  main .reviews-section .review .review-text {
+    width: 83%;
+    padding: 5em 2em;
+  }
+  main .reviews-section .review .review-text .review-texts-container {
+    font-size: clamp(1rem, 3vw, 2.3rem);
+    font-weight: 400;
+  }
+  main .reviews-section .review .review-btn {
+    font-size: clamp(3.3rem, 6vw, 9rem);
+  }
+  main .reviews-section .review .left-btn {
+    left: -20%;
+  }
+  main .reviews-section .review .right-btn {
+    right: -20%;
+  }
+}
+.hidden {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.hidden2 {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 2s, transform 2s;
+}
+
+.hidden3 {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 2s, transform 2s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  transform: translateX(0);
+}/*# sourceMappingURL=main.css.map */
